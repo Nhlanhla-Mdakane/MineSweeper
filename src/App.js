@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+
+import Mines from "./components/Mines";
+import Retry from "./components/Retry";
+import Help from "./components/Help";
+//initialising counter variable
+let newCount = 0;
+class App extends Component {
+  constructor(props) {
+    super(props);
+    // This binding is necessary to make `this` work in the callback
+    this.counter = this.counter.bind(this);
+
+    //In the constructor we initialise the state.
+    this.state = { input: 0 };
+  }
+
+  //this function updates the state based on how many times the user presses the correct button
+  counter(count) {
+    this.setState({ input: count });
+
+    newCount = newCount + parseInt(count);
+  }
+
+  render() {
+    return (
+      <div class="mineDivFront">
+        <h2 id="title">Mine Sweeper</h2>
+
+        <Mines onCounter={this.counter} newCountAmount={newCount} />
+
+        <Retry newCountAmount={newCount} />
+
+        <Help />
+      </div>
+    );
+  }
 }
 
 export default App;

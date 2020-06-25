@@ -1,3 +1,10 @@
+### `The rules of the game`
+In order to win ,You must click all the buttons that don't have mines, if you do hit the mine , you will have to restart to play again. #Bonus tip , memorize where you click so that you don't hit the mine when you restart
+
+###`setup`
+Follow this link or paste it in your browser( https://makandracards.com/reactjs-quick/52419-install-reactjs-windows )which will show you instructions on how to get the software that will run the app, after doing that , you can play the game by typing npm start in the project directory .
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
